@@ -14,8 +14,8 @@ class Module extends \yii\base\Module
   public function init(){
     parent::init();
 
-    $this->biddb=Instance($this->biddb,Connection::className());
-    $this->infodb=Instance($this->infodb,Connection::className());
+    $this->biddb=Instance::ensure($this->biddb,Connection::className());
+    $this->infodb=Instance::ensure($this->infodb,Connection::className());
   }
 }
 
